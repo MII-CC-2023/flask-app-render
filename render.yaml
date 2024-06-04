@@ -1,0 +1,10 @@
+services:
+  - type: web
+    runtime: python
+    name: flask-app
+    repo: https://github.com/MII-CC-2023/flask-app-render
+    region: frankfurt # Default: oregon
+    plan: starter     # Default: starter
+    branch: main      # Default: master
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
